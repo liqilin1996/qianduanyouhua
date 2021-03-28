@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <title> </title>
+ <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+ <script src="https://cdn.bootcdn.net/ajax/libs/moment.js/2.29.1/moment.js"></script>
+ <script src="https://cdn.bootcdn.net/ajax/libs/echarts/4.7.0/echarts.js"></script>
+  <link rel="stylesheet" type="text/css"
+        href="https://cdn.jsdelivr.net/npm/handsontable@latest/dist/handsontable.full.min.css">
+    <link rel="stylesheet" type="text/css" href="https://handsontable.com/static/css/main.css">
+    <script src="https://cdn.jsdelivr.net/npm/handsontable@latest/dist/handsontable.full.min.js"></script>
+</head>
+<body>
+ <div id="example1" style="width:400px;margin:0 auto;margin-top:40px"></div>
+ <div id="main1"    style="width:800px;height:400px;margin:0 auto;margin-top:40px"></div>
+    <script type="text/javascript">
+            const data = [
+                ['java','1', '降', '-0.01%'],
+                ['C','2', '升','0.12%'],
+                ['Python','3', '升','0.12%'],
+                ['C++','4', '降', '-0.02%'],
+				['C#','5', '升','0.12%'],
+				['Visual Basic.NET','6',  '降', '-0.01%'],
+				['javascript','7',  '降','-0.06%']				   
+            ];
+            const container = document.getElementById('example1');
+            const hot = new Handsontable(container, {
+                data: data,
+                rowHeaders: true,
+                colHeaders:  ['语言名称','排名','升或降', '变化幅度'], 
+                licenseKey: 'non-commercial-and-evaluation'//商业活动请购买秘钥,学习可使用'non-commercial-and-evaluation'
+            });
+        </script>
+		<script>
+		var myChart = echarts.init(document.getElementById('main1'));　
+var typedata=['JAVASCRIPT语言排名变化'];
+var data1=[6, 9,8, 8, 7];
+
+　　option = {
+　　　　tooltip: {
+　　　　　　trigger: 'axis'
+　　　　},
+　　　　legend: {　　//代表折线图上方的小标题
+　　　　　　data:typedata      
+　　　　},
+　　　　grid: {
+　　　　　　containLabel: true,
+　　　　　　right:78
+　　　　},
+　　　　xAxis: {
+　　　　　　type: 'category',
+　　　　　　boundaryGap: false,
+　　　　　　data: [2000,2005,2010,2015,2020]   //x轴 我显示的是最近7天日期
+　　　　},
+　　　　yAxis: {
+　　　　　　type: 'value'
+　　　　},
+　　　//　dataZoom: [{
+　　　　//　　show: true,
+　　　　　//　start: 50,
+　　　//　　　end: 100
+　　//　　}],
+		series: [{
+　　　　　　name:'JAVASCRIPT语言排名变化',
+　　　　　　type:'line',
+　　　　　　smooth: true,
+　　　　　　data:data1
+　　　　}]
+　　};
+
+　　myChart.setOption(option);//将option放进去 就可以了
+		
+		</script>
+</body>
+
+</html>
+
