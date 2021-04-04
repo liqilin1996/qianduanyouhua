@@ -1,0 +1,68 @@
+<html>
+
+<head>
+    <style type="text/css">
+        .out_side {
+            border: 1px solid #36238B;
+            width: 500px;
+            margin: 0 auto;
+        }
+        
+        .top_part {
+            background-color: #36238B;
+            padding: 6px;
+            height: 30px;
+            line-height: 30px;
+        }
+        
+        .top_title {
+            color: white;
+        }
+        
+        .but_part {
+            padding: 10px;
+            background: #C2D6EE;
+        }
+        
+        .search {}
+    </style>
+</head>
+
+<body>
+    <div class="out_side">
+        <div class="top_part">
+            <span class="top_title">查找</span>
+        </div>
+
+        <div class="but_part">
+
+            <div>
+                <span>查找内容(N):</span>
+                <input class="search"></input>
+                <button>查找下一个</button>
+                <button style="width: 70px;">取消</button>
+            </div>
+
+            <div style="display: flex;justify-content: space-between;">
+                <div style="margin-top: 40px;">
+                    <div>
+                        <input type="checkbox" value="" />
+                        <span>区分大小写(C)</span>
+                    </div>
+
+                    <div>
+                        <input type="checkbox" value="" />
+                        <span>循环(R)</span>
+                    </div>
+                </div>
+                <div>
+                    <p>方向</p>
+                    <input type="radio" value="1" />向上(U)
+                    <input type="radio" value="2" />向下(D)
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
